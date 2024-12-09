@@ -1,0 +1,87 @@
+body {
+    padding: 0;
+    margin: 0
+}
+
+#unity-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'CustomFont';
+    src: url('XiangJiaoLvSenKaFeiLingGanTi-2.ttf') format('truetype');
+}
+
+#unity-canvas {
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: white;
+    font-family: 'CustomFont', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#unity-canvas::before {
+    content: "美好需要片刻等候";
+    font-size: 168px;
+}
+
+#unity-loading-bar {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    /*把container覆盖全部屏幕，不然gif就会小*/
+    height: 100%;
+    /*同上*/
+    display: none
+}
+
+
+/*新gif格式*/
+#progress-gif {
+    position: absolute;
+    width: 100%;
+    opacity: 1;
+    bottom: -120%;
+    /*感觉是你说的比例问题，这个跟向上挪动的范围一样调调就好*/
+    transition: bottom 1.5s linear;
+}
+
+#unity-logo {
+    width: 154px;
+    height: 130px;
+    background: url('unity-logo-light.png') no-repeat center
+}
+
+#unity-progress-bar-empty {
+    margin-left: auto;
+    margin-right: auto;
+    width: 141px;
+    height: 18px;
+    margin-top: 10px;
+    background: url('progress-bar-empty-dark.png') no-repeat center
+}
+
+#unity-progress-bar-full {
+    width: 100%;
+    height: 18px;
+    margin-top: 10px;
+    background: url('progress-bar-full-dark.png') no-repeat center
+}
+
+#unity-warning {
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%);
+    background: white;
+    padding: 10px;
+    display: none
+}
