@@ -31,7 +31,7 @@
         var container = document.querySelector("#unity-container");
         var canvas = document.querySelector("#unity-canvas");
         var loadingBar = document.querySelector("#unity-loading-bar");
-        //var progressBarFull = document.querySelector("#unity-progress-bar-full");
+        var progressBarFull = document.querySelector("#unity-progress-bar-full");
         var warningBanner = document.querySelector("#unity-warning");
 
         // Shows a temporary message banner/ribbon for a few seconds, or
@@ -94,7 +94,7 @@
         script.onload = () => {
           createUnityInstance(canvas, config, (progress) => {
             var gif = document.querySelector("#progress-gif"); //添加的代码，不解释
-            gif.style.bottom = -(1 - progress) * 100 + 150 + "px"; //向上移动 
+            gif.style.bottom = -(1 - progress) * 100 + 100 + "px"; //向上移动 
             progressBarFull.style.width = 100 * progress + "%";
           }).then((unityInstance) => {
             loadingBar.style.display = "none";
